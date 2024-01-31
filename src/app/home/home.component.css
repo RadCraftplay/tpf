@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* {
+    font-family: "Inter";
+}
+
+#prompt-image {
+    width: 100%;
+    min-height: 600px;
+
+    /* TODO: Zdjęcie w tle powinoo być rozmazane */
+    background-image: url("../../assets/img/home-background.webp");
+    background-size: cover;
+    background-position: center;
+}
+
+#login-prompt {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    margin: auto;
+    transform: translate(0, 50%);
+    max-width: 900px;
+    
+    font-weight: 600;
+    text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#login-prompt > h1 {
+    color: white;
+    font-weight: 600;
+    font-size: 72px;
+    margin: 8px 0px;
+}
+
+#login-prompt > h2 {
+    color: white;
+    font-size: 24;
+    margin: 8px 0px;
+}
+
+#login-prompt > button {
+    height: 64px;
+    width: 340px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+
+    background-color: #00CA5D;
+    border-radius: 32px;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+    color: white;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+#login-prompt > button:hover {
+    background-color: #00b253;
+}
+
+/* TODO: Maksymalny rozmiar tej sekcji nie powinien być większy niż 1200px */
+#features {
+    display: flex;
+}
+
+#features div{
+    flex-direction: column;
+    flex: 1;
+    padding: 48px;
+}
+
+.feature-preview {
+    position: relative;
+}
+
+/* TODO: Dobrze by było gdyby zdjęcia były otoczone ramkami */
+.feature-preview img {
+  width: 100%;
+}
