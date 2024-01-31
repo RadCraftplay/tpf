@@ -59,7 +59,7 @@
     font-weight: 600;
 }
 
-#login-prompt > a:hover {
+#login-prompt > button:hover {
     background-color: #00b253;
 }
 
