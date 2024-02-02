@@ -5,7 +5,7 @@ import { ListSelectorComponent } from '../list-selector/list-selector.component'
 @Component({
   selector: 'app-component-tests',
   standalone: true,
-  imports: [],
+  imports: [ ListSelectorComponent ],
   templateUrl: './component-tests.component.html',
   styleUrl: './component-tests.component.css'
 })
