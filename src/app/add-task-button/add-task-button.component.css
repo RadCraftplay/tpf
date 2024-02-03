@@ -4,13 +4,13 @@ a {
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    line-height: 64px;
+    line-height: 48px;
 
     background-color: #00CA5D; 
-    border-radius: 32px;
+    border-radius: 24px;
 
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
 }
 
