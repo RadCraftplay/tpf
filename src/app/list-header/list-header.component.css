@@ -1,0 +1,18 @@
+.list-header {
+    margin-top: 48px;
+    margin-right: 48px;
+    margin-left: 16px;
+}
+
+h1 {
+    display: inline-block;
+
+    font-size: 32px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 48px;
+}
+
+app-add-task-button {
+    float: right;
+}
