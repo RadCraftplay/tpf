@@ -1,1 +1,13 @@
-<p>tasks-dashboard works!</p>
+<h2>My tasks</h2>
+
+<a href="/create">Kliknij se tu zeby dodac sobie taska</a>
+
+<ul class="tasks">
+  <li *ngFor="let task of tasks">
+    <a routerLink="/detail/{{task.id}}">
+      <span class="badge">{{task.id}}</span> {{task.name}}
+    </a>
+    <button type="button" class="delete" title="delete task"
+            (click)="delete(task)">x</button>
+  </li>
+</ul>
