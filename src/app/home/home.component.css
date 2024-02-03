@@ -24,7 +24,7 @@
     margin: auto;
     transform: translate(0, 50%);
     max-width: 900px;
-    
+
     font-weight: 600;
     text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -40,27 +40,6 @@
     color: white;
     font-size: 24;
     margin: 8px 0px;
-}
-
-#login-prompt > button {
-    height: 64px;
-    width: 340px;
-
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-
-    background-color: #00CA5D;
-    border-radius: 32px;
-    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
-
-    color: white;
-    font-size: 24px;
-    font-weight: 600;
-}
-
-#login-prompt > button:hover {
-    background-color: #00b253;
 }
 
 /* TODO: Maksymalny rozmiar tej sekcji nie powinien być większy niż 1200px */
