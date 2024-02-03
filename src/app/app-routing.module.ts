@@ -7,6 +7,7 @@ import {TaskCreatorComponent} from "./task-creator/task-creator.component";
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'dashboard', component: TasksDashboardComponent },
   { path: 'detail/:id', component: TaskDetailsComponent },
   { path: 'create', component: TaskCreatorComponent },

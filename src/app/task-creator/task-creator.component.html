@@ -1,1 +1,16 @@
-<p>task-creator works!</p>
+<h2>Create a task</h2>
+
+<div>
+  <label for="new-task-name">Task name: </label>
+  <input id="new-task-name" #taskName />
+
+  <label for="new-task-description">Task description: </label>
+  <input id="new-task-description" #taskDescription />
+
+  <label for="new-task-created-date">Created date: </label>
+  <input id="new-task-created-date" #taskCreatedDate />
+
+  <button type="button" class="add-button" (click)="add(taskName.value, taskDescription.value, taskCreatedDate.value, ''); taskName.value=''; taskDescription.value=''; taskCreatedDate.value='';" >
+    Add task
+  </button>
+</div>
