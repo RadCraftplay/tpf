@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { ListSelectorComponent } from '../list-selector/list-selector.component';
-
 @Component({
   selector: 'app-component-tests',
   standalone: true,
