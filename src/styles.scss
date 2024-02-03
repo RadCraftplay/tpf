@@ -1,5 +1,5 @@
 /* Application-wide Styles */
-$primary-color: #3498db; /* Dodger Blue */
+$primary-color: #cdf2e0; /* Dodger Blue */
 $secondary-color:  #444;
 $background-color: #ecf0f1; /* Clouds */
 $disabled-color: #bdc3c7; /* Silver */
@@ -13,22 +13,16 @@ body {
 
 /* Buttons */
 button {
-  background-color: $background-color;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
+  background-color: white;
   color: white;
-  font-size: 1.2rem;
-  padding: 1rem;
-  margin: 1rem 1rem 1rem 0;
-  transition: background-color 0.3s, color 0.3s;
 
   &:hover {
     background-color: $primary-color;
   }
 
   &:disabled {
-    background-color: $background-color;
     color: $disabled-color;
     cursor: not-allowed;
   }

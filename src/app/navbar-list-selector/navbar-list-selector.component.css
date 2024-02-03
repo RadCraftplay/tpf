@@ -1,0 +1,22 @@
+.navbar-list-item {
+    color: black;
+    width: 256px;
+    overflow: hidden;
+    padding: 8px;
+    border-radius: 8px;
+    margin: 0;
+}
+
+img {
+    float: left;
+}
+
+
+.list-item-header {
+    float: left;
+    display: table-cell;
+    font-size: 20px;
+    margin: 6px;
+    margin-left: 8px;
+    margin-right: 16px;
+}
