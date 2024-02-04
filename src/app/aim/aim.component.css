@@ -1,0 +1,16 @@
+.aim {
+    display: flex;
+    margin: 0px 8px;
+}
+
+span {
+    margin: 0;
+    margin-left: 16px;
+    padding: 14px 0px;
+
+    font-size: 20px;
+}
+
+.checked {
+    color: #B3B3B3;
+}
