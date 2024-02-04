@@ -1,16 +1,43 @@
-<h2>Create a task</h2>
+<div class="task-creator-container">
+  <h2>Create a task</h2>
+  <hr>
+  
+  <div class="input-section">
+    <label class="bold-label">Nazwa</label>
+    <textarea id="new-task-name" #taskName rows="2" placeholder="Przykładowy cel"></textarea>
+  </div>
 
-<div>
-  <label for="new-task-name">Task name: </label>
-  <input id="new-task-name" #taskName />
+  <div class="input-section priority-section">
+    <label class="bold-label">Priorytet</label>
+    <div class="priority-options">
+      <label>
+        <input type="radio" name="priority" value="high" [(ngModel)]="priority">
+        <span class="custom-checkbox"></span> Wysoki
+      </label>
+      <label>
+        <input type="radio" name="priority" value="medium" [(ngModel)]="priority">
+        <span class="custom-checkbox"></span> Średni
+      </label>
+      <label>
+        <input type="radio" name="priority" value="low" [(ngModel)]="priority">
+        <span class="custom-checkbox"></span> Niski
+      </label>
+      <label>
+        <input type="radio" name="priority" value="none" [(ngModel)]="priority">
+        <span class="custom-checkbox"></span> Brak priorytetu
+      </label>
+    </div>
+  </div>
 
-  <label for="new-task-description">Task description: </label>
-  <input id="new-task-description" #taskDescription />
+  <div class="input-section">
+    <label class="bold-label">Opis</label>
+    <textarea id="new-task-description" #taskDescription rows="10" placeholder="Opis celu"></textarea>
+  </div>
 
-  <label for="new-task-created-date">Created date: </label>
-  <input id="new-task-created-date" #taskCreatedDate />
-
-  <button type="button" class="add-button" (click)="add(taskName.value, taskDescription.value, taskCreatedDate.value, ''); taskName.value=''; taskDescription.value=''; taskCreatedDate.value='';" >
-    Add task
-  </button>
+  <div class="input-section">
+    <label class="bold-label">Znaczniki</label>
+    <textarea id="new-task-tags" #taskTags rows="2" placeholder="Dodaj znaczniki"></textarea>
+  </div>
+  <button class="save-button" (click)="add(taskName.value, taskDescription.value, priority, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
+    Zapisz</button>
 </div>

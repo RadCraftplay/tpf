@@ -26,4 +26,8 @@ export class TaskCreatorComponent {
         this.goBack()
       });
   }
+  priority: string = '';
+  setPriority(priority: string): void {
+    this.priority = priority;
+  }
 }
