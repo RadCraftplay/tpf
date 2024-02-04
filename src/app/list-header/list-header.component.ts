@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { AddTaskButtonComponent } from '../add-task-button/add-task-button.component';
 import { SeparatorComponent } from '../separator/separator.component';
 
@@ -10,5 +10,7 @@ import { SeparatorComponent } from '../separator/separator.component';
   styleUrl: './list-header.component.css'
 })
 export class ListHeaderComponent {
+  @Input() name : string = "TODO";
 
+  constructor() {}
 }
