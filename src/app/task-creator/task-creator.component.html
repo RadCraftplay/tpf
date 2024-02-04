@@ -4,26 +4,26 @@
   
   <div class="input-section">
     <label class="bold-label">Nazwa</label>
-    <textarea id="new-task-name" #taskName rows="2" placeholder="Przykładowy cel"></textarea>
+    <textarea id="new-task-name" #taskName rows="1" placeholder="Przykładowy cel"></textarea>
   </div>
 
   <div class="input-section priority-section">
     <label class="bold-label">Priorytet</label>
     <div class="priority-options">
       <label>
-        <input type="radio" name="priority" value="high" [(ngModel)]="priority">
+        <input type="radio" name="priority" value="Wysoki" [(ngModel)]="priority">
         <span class="custom-checkbox"></span> Wysoki
       </label>
       <label>
-        <input type="radio" name="priority" value="medium" [(ngModel)]="priority">
+        <input type="radio" name="priority" value="Średni" [(ngModel)]="priority">
         <span class="custom-checkbox"></span> Średni
       </label>
       <label>
-        <input type="radio" name="priority" value="low" [(ngModel)]="priority">
+        <input type="radio" name="priority" value="Niski" [(ngModel)]="priority">
         <span class="custom-checkbox"></span> Niski
       </label>
       <label>
-        <input type="radio" name="priority" value="none" [(ngModel)]="priority">
+        <input type="radio" name="priority" value="Brak priorytetu" [(ngModel)]="priority">
         <span class="custom-checkbox"></span> Brak priorytetu
       </label>
     </div>
@@ -36,7 +36,7 @@
 
   <div class="input-section">
     <label class="bold-label">Znaczniki</label>
-    <textarea id="new-task-tags" #taskTags rows="2" placeholder="Dodaj znaczniki"></textarea>
+    <textarea id="new-task-tags" #taskTags rows="1" placeholder="Dodaj znaczniki"></textarea>
   </div>
   <button class="save-button" (click)="add(taskName.value, priority, taskDescription.value, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
     Zapisz</button>

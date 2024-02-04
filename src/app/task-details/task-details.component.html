@@ -1,27 +1,35 @@
-<div class="task-details-container">
-  <h2>Szczegóły celu</h2>
-  <hr>
+<div *ngIf="!editMode">
+  <div class="task-details-container">
+    <h2>Szczegóły celu</h2>
+    <hr>
 
-  <div class="detail-section">
-    <div class="detail-label">Nazwa</div>
-    <div class="detail-content">{{ task?.name }}</div>
-  </div>
+    <div class="detail-section">
+      <div class="detail-label">Nazwa</div>
+      <div class="detail-content">{{ task?.name }}</div>
+    </div>
 
-  <div class="detail-section">
-    <div class="detail-label">Priorytet</div>
-    <div class="detail-content">{{ task?.priority }}</div>
-  </div>
-  
-  <div class="detail-section">
-    <div class="detail-label">Opis</div>
-    <div class="detail-content">{{ task?.description }}</div>
-  </div>
-  <div class="detail-section">
-    <div class="detail-label">Znaczniki</div>
-    <div class="detail-content">{{ task?.tags }}</div>
-  </div>
-  <div class="button-container">
+    <div class="detail-section">
+      <div class="detail-label">Priorytet</div>
+      <div class="detail-content">{{ task?.priority }}</div>
+    </div>
+    
+    <div class="detail-section">
+      <div class="detail-label">Opis</div>
+      <div class="detail-content">{{ task?.description }}</div>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-label">Znaczniki</div>
+      <div class="detail-content">{{ task?.tags }}</div>
+    </div>
+
+    <div class="button-container">
       <button class="delete-button" (click)="deleteTask()">Usuń cel</button>
-      <button class="edit-button" (click)="editTask()">Edytuj cel</button>
-  </div>  
+      <button class="edit-button" (click)="enterEditMode()">Edytuj cel</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="editMode">
+  <app-task-editor [task]="task" (editTask)="exitEditMode()"></app-task-editor>
 </div>
