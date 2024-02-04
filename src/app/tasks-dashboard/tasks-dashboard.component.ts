@@ -26,9 +26,11 @@ export class TasksDashboardComponent implements OnInit {
             const task: Task = {
               id: docId,
               name: data.name,
+              priority: data.priority,
               description: data.description,
-              date_created: data.date_created,
-              group_id: data.group_id,
+              //date_created: data.date_created,
+              //group_id: data.group_id,
+              tags: data.tags,
             };
             return task
           }

@@ -1,19 +1,27 @@
-<div *ngIf="task">
-  <h2>{{task.name | uppercase}} Details</h2>
-  <div><span>id: </span>{{task.id}}</div>
-  <div>
-    <label for="task-name">Task name: </label>
-    <input id="task-name" [(ngModel)]="task.name" placeholder="Task name"/> <br>
+<div class="task-details-container">
+  <h2>Szczegóły celu</h2>
+  <hr>
 
-    <label for="task-description">Task description: </label>
-    <input id="task-description" [(ngModel)]="task.description" placeholder="Task description"/> <br>
-
-    <label for="task-date_created">Task date created: </label>
-    <input id="task-date_created" [(ngModel)]="task.date_created" placeholder="Task date created"/> <br>
-
-    <label for="task-group_id">Task group id: </label>
-    <input id="task-group_id" [(ngModel)]="task.group_id" placeholder="Task groupd id"/>
+  <div class="detail-section">
+    <div class="detail-label">Nazwa</div>
+    <div class="detail-content">{{ task?.name }}</div>
   </div>
-  <button type="button" (click)="goBack()">go back</button>
-  <button type="button" (click)="save()">save</button>
+
+  <div class="detail-section">
+    <div class="detail-label">Priorytet</div>
+    <div class="detail-content">{{ task?.priority }}</div>
+  </div>
+  
+  <div class="detail-section">
+    <div class="detail-label">Opis</div>
+    <div class="detail-content">{{ task?.description }}</div>
+  </div>
+  <div class="detail-section">
+    <div class="detail-label">Znaczniki</div>
+    <div class="detail-content">{{ task?.tags }}</div>
+  </div>
+  <div class="button-container">
+      <button class="delete-button" (click)="deleteTask()">Usuń cel</button>
+      <button class="edit-button" (click)="editTask()">Edytuj cel</button>
+  </div>  
 </div>

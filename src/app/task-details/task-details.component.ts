@@ -45,4 +45,20 @@ export class TaskDetailsComponent implements OnInit {
         });
     }
   }
+  deleteTask(): void {
+    if (this.task) {
+      this.tasksService.deleteTask(this.task.id)
+        .then(() => {
+          this.goBack();
+        });
+    }
+  }
+  editTask(): void {
+    if (this.task) {
+      this.tasksService.updateTask(this.task)
+        .then(task => {
+          this.goBack();
+        });
+    }
+  }
 }

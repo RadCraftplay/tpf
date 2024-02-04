@@ -38,6 +38,6 @@
     <label class="bold-label">Znaczniki</label>
     <textarea id="new-task-tags" #taskTags rows="2" placeholder="Dodaj znaczniki"></textarea>
   </div>
-  <button class="save-button" (click)="add(taskName.value, taskDescription.value, priority, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
+  <button class="save-button" (click)="add(taskName.value, priority, taskDescription.value, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
     Zapisz</button>
 </div>
