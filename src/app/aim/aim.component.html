@@ -1,4 +1,4 @@
 <div class="aim">
-    <img [src]="checked ? '../../assets/img/checkbox-checked.svg' : '../../assets/img/checkbox.svg'"/>
-    <span [class.checked]="checked">{{name}}</span>    
+    <img [src]="aim?.done ? '../../assets/img/checkbox-checked.svg' : '../../assets/img/checkbox.svg'"/>
+    <span [class.checked]="aim?.done">{{aim?.name}}</span>    
 </div>

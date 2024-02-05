@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Aim } from '../models/aim';
 
 @Component({
   selector: 'app-aim',
@@ -8,17 +9,7 @@ import { Component, Input } from '@angular/core';
   styleUrl: './aim.component.css'
 })
 export class AimComponent {
-  @Input() name: string = "TODO";
-  private _checked = false;
-
-  @Input('checked')
-  get checked(): boolean {
-    return this._checked;
-  }
-  set checked(value: string) {
-    this._checked = value.toLowerCase() === "true";
-    console.log(this._checked)
-  }
+  @Input() aim: Aim | undefined;
 
   constructor() { }
 }
