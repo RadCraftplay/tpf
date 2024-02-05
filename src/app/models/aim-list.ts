@@ -3,7 +3,8 @@ import {Aim} from "./aim"
 
 export interface AimList {
     getName() : string;
-    getAims() : Observable<any>;
+    canAdd(): boolean;
+    getAims() : Observable<Aim[]>;
 }
 
 export class DummyTagList implements AimList {
@@ -15,11 +16,15 @@ export class DummyTagList implements AimList {
     }   
 
     getName(): string {
-        return this.tagName;
+        return "#" + this.tagName;
+    }
+
+    canAdd(): boolean {
+        return false;
     }
     
-    getAims(): Observable<Aim> {
-        const emitter : Observable<Aim> = of(
+    getAims(): Observable<Aim[]> {
+        const emitter : Observable<Aim[]> = of([
         {
             id: "1",
             name: "Przykładowe zadanie",
@@ -43,7 +48,7 @@ export class DummyTagList implements AimList {
             year: 2024,
             spanType: 1,
             spanValue: 1
-        });
+        }]);
 
         return emitter;
     }
