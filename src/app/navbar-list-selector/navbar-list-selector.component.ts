@@ -9,6 +9,7 @@ import { Component, Input } from '@angular/core';
 })
 export class NavbarListSelectorComponent {
   @Input() name : string = "TODO";
+  @Input() icon : string = "../../assets/img/checkbox.svg";
 
   constructor() {}
 }
