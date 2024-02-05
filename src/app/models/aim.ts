@@ -14,6 +14,7 @@ export enum AimPriority {
 export interface Aim {
     id: string;
     name: string;
+    owner: string;
     priority: number;
     description: string;
     tags: string[];
