@@ -67,6 +67,10 @@ export class TimespannedList implements AimList {
         this.span = span;
         this.inner = inner;
     }
+    
+    public get timeSpan() : AimSpan {
+        return this.span
+    }
 
     getName(): string {
         switch(this.span) {
