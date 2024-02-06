@@ -59,7 +59,7 @@ export class DummyTagList implements AimList {
     }
 }
 
-export class DummySpannedList implements AimList {
+export class TimespannedList implements AimList {
     private readonly span: AimSpan
     private readonly inner: AimList
 
