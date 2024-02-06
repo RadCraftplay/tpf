@@ -20,3 +20,7 @@ img {
     margin-left: 8px;
     margin-right: 16px;
 }
+
+.selected {
+    background-color: #E7F3ED;
+}
