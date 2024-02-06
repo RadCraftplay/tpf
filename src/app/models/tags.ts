@@ -1,4 +1,4 @@
-export interface Tag {
+export interface UserTags {
     id: string;
     userTags: [string];
 }
