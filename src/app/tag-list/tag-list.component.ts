@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ListHeaderComponent } from '../list-header/list-header.component';
 import { AimComponent } from '../aim/aim.component';
 import { Aim } from '../models/aim';
-import { Observable } from 'rxjs';
+import { Observable, Subject, fromEvent, takeUntil } from 'rxjs';
 import { AimList } from '../models/aim-list';
+import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'app-tag-list',
@@ -12,16 +13,24 @@ import { AimList } from '../models/aim-list';
   templateUrl: './tag-list.component.html',
   styleUrl: './tag-list.component.css'
 })
-export class TagListComponent implements OnInit {
-  @Input() name : string = "TODO";
+export class TagListComponent implements OnInit, OnChanges{
   @Input() aimSource : AimList | undefined
   aims : Aim[] = [];
 
   constructor() {}
 
+  public onListChange = new Subject();
+
   ngOnInit(): void {
     console.log(this.aimSource)
-    this.aimSource!.getAims().subscribe(
+    this.aimSource!.getAims().pipe(takeUntil(this.onListChange)).subscribe(
+      data => this.aims = data);
+  }
+
+  ngOnChanges(_: SimpleChanges) {
+    // Stop fetching old list
+    this.onListChange.next({});
+    this.aimSource!.getAims().pipe(takeUntil(this.onListChange)).subscribe(
       data => this.aims = data);
   }
 }
