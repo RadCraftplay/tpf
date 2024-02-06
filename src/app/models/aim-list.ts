@@ -1,9 +1,14 @@
 import {of, Observable, filter, map} from "rxjs";
 import {Aim, AimSpan} from "./aim"
 
+export enum ListType {
+    Timespan,
+    Tag
+}
+
 export interface AimList {
     getName() : string;
-    canAdd(): boolean;
+    getType(): ListType;
     getAims() : Observable<Aim[]>;
 }
 
@@ -19,8 +24,8 @@ export class DummyTagList implements AimList {
         return "#" + this.tagName;
     }
 
-    canAdd(): boolean {
-        return false;
+    getType(): ListType {
+        return ListType.Tag;
     }
     
     getAims(): Observable<Aim[]> {
@@ -76,8 +81,8 @@ export class DummySpannedList implements AimList {
         }
     }
 
-    canAdd(): boolean {
-        return true;
+    getType(): ListType {
+        return ListType.Timespan;
     }
 
     getAims(): Observable<Aim[]> {
