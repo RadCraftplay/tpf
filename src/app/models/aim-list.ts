@@ -1,5 +1,5 @@
-import {of, Observable} from "rxjs";
-import {Aim} from "./aim"
+import {of, Observable, filter, map} from "rxjs";
+import {Aim, AimSpan} from "./aim"
 
 export interface AimList {
     getName() : string;
@@ -46,10 +46,47 @@ export class DummyTagList implements AimList {
             done: true,
             tags: [ "przyklad", "ukończone" ],
             year: 2024,
-            spanType: 1,
-            spanValue: 1
+            spanType: 2,
+            spanValue: 2
         }]);
 
         return emitter;
+    }
+}
+
+export class DummySpannedList implements AimList {
+    private readonly span: AimSpan
+    private readonly inner: AimList
+
+    constructor(span: AimSpan, inner: AimList) {
+        this.span = span;
+        this.inner = inner;
+    }
+
+    getName(): string {
+        switch(this.span) {
+            case AimSpan.Month:
+                return "Miesiące"
+            case AimSpan.Week:
+                return "Tygodnie"
+            case AimSpan.Year:
+                return "Lata"
+            default:
+                throw new Error("Method not implemented.");
+        }
+    }
+
+    canAdd(): boolean {
+        return true;
+    }
+
+    getAims(): Observable<Aim[]> {
+        const spanNum = this.span.valueOf()
+
+        return this.inner.getAims().pipe(
+            map(aims => aims.filter(
+                aim => aim.spanType === spanNum)
+            )
+        )
     }
 }
