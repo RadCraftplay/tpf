@@ -21,16 +21,18 @@ export class TagListComponent implements OnInit, OnChanges{
 
   public onListChange = new Subject();
 
-  ngOnInit(): void {
-    console.log(this.aimSource)
+  fetchList() {
     this.aimSource!.getAims().pipe(takeUntil(this.onListChange)).subscribe(
       data => this.aims = data);
+  }
+
+  ngOnInit(): void {
+    this.fetchList()
   }
 
   ngOnChanges(_: SimpleChanges) {
     // Stop fetching old list
     this.onListChange.next({});
-    this.aimSource!.getAims().pipe(takeUntil(this.onListChange)).subscribe(
-      data => this.aims = data);
+    this.fetchList()
   }
 }
