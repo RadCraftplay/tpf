@@ -12,7 +12,7 @@ export class AimComponent {
   @Input() aim: Aim | undefined;
 
   
-  public get aimLint() : string {
+  public get aimLink() : string {
     return `/detail/${this.aim?.id}`
   }
   
