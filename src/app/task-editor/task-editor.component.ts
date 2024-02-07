@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Task } from "../services/tasks-service/task";
 import { TasksService } from "../services/tasks-service/tasks-service";
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-task-editor',
@@ -12,31 +13,42 @@ export class TaskEditorComponent {
   @Output() editTask: EventEmitter<void> = new EventEmitter<void>();
 
   editedName: string = '';
-  priority: string = '';
+  priority: number = 0;
   editedDescription: string = '';
-  editedTags: string = ''; // Zmiana na string
+  editedTags: string[] = [];
+  editedYear: number = 0;
+  editedSpanValue: number = 0;
 
-  constructor(private tasksService: TasksService) {}
+  constructor(private tasksService: TasksService, private location: Location) {}
 
   ngOnChanges(): void {
     if (this.task) {
       this.editedName = this.task.name;
       this.priority = this.task.priority;
       this.editedDescription = this.task.description;
-      this.editedTags = this.task.tags;
+      this.editedTags = this.task.tags.map(tag => tag.toString())
+      this.editedYear = this.task.year;
+      this.editedSpanValue = this.task.spanValue;
     }
   }
 
   saveChanges(): void {
+
     if (this.task) {
       this.task.name = this.editedName;
-      this.task.priority = this.priority;
+      this.task.priority = parseInt(this.priority.toString());
       this.task.description = this.editedDescription;
       this.task.tags = this.editedTags;
+      this.task.year = parseInt(this.editedYear.toString());
+      this.task.spanValue = parseInt(this.editedSpanValue.toString());
+
       this.tasksService.updateTask(this.task)
         .then(() => {
           this.editTask.emit();
         });
     }
+  }
+  goBack(): void {
+    this.location.back();
   }
 }
