@@ -3,6 +3,7 @@ import {Observable} from "rxjs";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import { Task } from './task';
 import {doc} from "@angular/fire/firestore";
+import { Aim, AimSpan } from '../../models/aim';
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +29,10 @@ export class TasksService {
 
   getTaskByName(name: string): Observable<any[]> {
     return this.db.collection(this.path, ref => ref.where('name', '==', name)).valueChanges({ id: 'key' });
+  }
+
+  getTasksByTimespan(type: AimSpan): Observable<Aim[]> {
+    return this.db.collection(this.path, ref => ref.where('spanType', '==', type.valueOf())).valueChanges({ id: 'key' }) as Observable<Aim[]>;
   }
 
   async addTask(task: Task): Promise<Task> {
