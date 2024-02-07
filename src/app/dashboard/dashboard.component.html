@@ -1,5 +1,10 @@
 <div>
     <app-navbar (selectedListChanged)="onSelectedListChanged($event)"></app-navbar>
     <app-separator-vertical></app-separator-vertical>
-    <app-tag-list [aimSource]="selectedList"></app-tag-list>
+    <ng-container *ngIf="selectedList.getType() === TAG">
+        <app-tag-list [aimSource]="selectedList"></app-tag-list>
+    </ng-container>
+    <ng-container #elseTemplate>
+        <app-timespan-list [aimSource]="listAsTimespanned"></app-timespan-list>
+    </ng-container>
 </div>

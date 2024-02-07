@@ -1,8 +1,6 @@
 <div>
     <h2>{{name}}</h2>
-    <app-aim name="Cel 1"></app-aim>
-    <app-aim name="Cel 2"></app-aim>
-    <app-aim name="Cel 3"></app-aim>
-    <app-aim name="Cel 4"></app-aim>
-    <app-aim name="Cel 5" checked="true"></app-aim>
+    @for (aim of aims; track aims) {
+        <app-aim [aim]="aim"></app-aim>
+    }
 </div>
