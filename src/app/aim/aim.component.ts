@@ -11,5 +11,11 @@ import { Aim } from '../models/aim';
 export class AimComponent {
   @Input() aim: Aim | undefined;
 
+  
+  public get aimLint() : string {
+    return `/detail/${this.aim?.id}`
+  }
+  
+
   constructor() { }
 }

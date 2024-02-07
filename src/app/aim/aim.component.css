@@ -3,11 +3,13 @@
     margin: 0px 8px;
 }
 
-span {
+a {
     margin: 0;
     margin-left: 16px;
     padding: 14px 0px;
 
+    text-decoration: none;
+    color: #000000;
     font-size: 20px;
 }
 
