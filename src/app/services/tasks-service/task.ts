@@ -1,7 +1,11 @@
 export interface Task {
-  id: string;
+  id : string;
   name: string;
-  priority: string;
   description: string;
-  tags: string;
+  priority: number;
+  tags: string[];
+  year: number;
+  spanType: number;
+  spanValue: number;
+  done: boolean;
 }

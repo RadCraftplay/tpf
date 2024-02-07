@@ -28,9 +28,11 @@ export class TasksDashboardComponent implements OnInit {
               name: data.name,
               priority: data.priority,
               description: data.description,
-              //date_created: data.date_created,
-              //group_id: data.group_id,
               tags: data.tags,
+              year: data.year,
+              spanType: data.spanType,
+              spanValue: data.spanValue,
+              done: data.done
             };
             return task
           }
