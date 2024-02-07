@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Task } from "../services/tasks-service/task";
 import { TasksService } from "../services/tasks-service/tasks-service";
 import { Location } from '@angular/common';
+import { Aim } from '../models/aim';
 
 @Component({
   selector: 'app-task-editor',
@@ -9,7 +9,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./task-editor.component.css']
 })
 export class TaskEditorComponent {
-  @Input() task: Task | undefined;
+  @Input() task: Aim | undefined;
   @Output() editTask: EventEmitter<void> = new EventEmitter<void>();
 
   editedName: string = '';

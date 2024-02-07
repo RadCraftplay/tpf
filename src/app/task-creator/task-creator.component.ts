@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { Task } from "../services/tasks-service/task";
 import { TasksService } from "../services/tasks-service/tasks-service";
 import { Location } from '@angular/common';
+import { Aim } from '../models/aim';
 
 @Component({
   selector: 'app-task-creator',
@@ -21,7 +21,7 @@ export class TaskCreatorComponent {
     name = name.trim();
     if (!name) { return; }
     const tagArray = tags.split(',').map(tag => tag.trim());
-    const task = { name: name, priority: priority, description: description, tags: tagArray, year: year, spanValue: spanValue } as Task ;
+    const task = { name: name, priority: priority, description: description, tags: tagArray, year: year, spanValue: spanValue } as Aim ;
     this.tasksService.addTask(task)
       .then(task => {
         this.goBack()
