@@ -1,5 +1,6 @@
 import {of, Observable, filter, map} from "rxjs";
 import {Aim, AimSpan} from "./aim"
+import { TasksService } from "../services/tasks-service/tasks-service";
 
 export enum ListType {
     Timespan,
@@ -10,6 +11,24 @@ export interface AimList {
     getName() : string;
     getType(): ListType;
     getAims() : Observable<Aim[]>;
+}
+
+export class EmptyList implements AimList {
+
+    constructor(private readonly name: string = "") {
+    }
+
+    getName(): string {
+        return this.name;
+    }
+
+    getType(): ListType {
+        return ListType.Tag;
+    }
+
+    getAims(): Observable<Aim[]> {
+        return of();
+    }
 }
 
 export class DummyTagList implements AimList {
@@ -61,11 +80,11 @@ export class DummyTagList implements AimList {
 
 export class TimespannedList implements AimList {
     private readonly span: AimSpan
-    private readonly inner: AimList
+    private readonly service: TasksService
 
-    constructor(span: AimSpan, inner: AimList) {
+    constructor(span: AimSpan, tasksService: TasksService) {
         this.span = span;
-        this.inner = inner;
+        this.service = tasksService;
     }
     
     public get timeSpan() : AimSpan {
@@ -90,12 +109,6 @@ export class TimespannedList implements AimList {
     }
 
     getAims(): Observable<Aim[]> {
-        const spanNum = this.span.valueOf()
-
-        return this.inner.getAims().pipe(
-            map(aims => aims.filter(
-                aim => aim.spanType === spanNum)
-            )
-        )
+        return this.service.getTasksByTimespan(this.timeSpan)
     }
 }
