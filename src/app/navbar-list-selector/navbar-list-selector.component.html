@@ -1,0 +1,4 @@
+<button class="navbar-list-item" (click)="this.listSelected.emit(list)" [class.selected]="isSelected()">
+    <img [src]="icon"/>
+    <div class="list-item-header">{{list?.getName()}}</div>
+</button>

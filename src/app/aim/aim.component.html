@@ -1,0 +1,4 @@
+<div class="aim">
+    <img [src]="aim?.done ? '../../assets/img/checkbox-checked.svg' : '../../assets/img/checkbox.svg'"/>
+    <a [class.checked]="aim?.done" [href]="aimLink">{{aim?.name}}</a>    
+</div>

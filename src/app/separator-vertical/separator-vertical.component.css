@@ -1,0 +1,8 @@
+.separator-vertical {
+    border-left: 2px solid #B3B3B3;
+    width: 1px;
+    height: 100%;
+    /* Centering for demo pourposes */
+    margin-left: auto;
+    margin-right: auto;
+  }

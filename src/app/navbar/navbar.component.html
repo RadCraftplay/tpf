@@ -1,0 +1,9 @@
+<div id="navbar">
+    <app-navbar-header name="Listy"></app-navbar-header>
+    <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/week.svg" [list]="weekList"></app-navbar-list-selector>
+    <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/month.svg" [list]="monthList"></app-navbar-list-selector>
+    <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/year.svg" [list]="yearList"></app-navbar-list-selector>
+    <app-separator></app-separator>
+    <app-navbar-header name="Znaczniki"></app-navbar-header>
+    <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/tag.svg" [list]="tagList"></app-navbar-list-selector>
+</div>

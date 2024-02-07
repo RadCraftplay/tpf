@@ -1,0 +1,21 @@
+a {
+    width: 192px;
+
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 48px;
+
+    background-color: #00CA5D; 
+    border-radius: 24px;
+
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+a:hover {
+    background-color: #00b253;
+    cursor: pointer;
+}
+
