@@ -8,7 +8,6 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 import {TaskCreatorComponent} from "./task-creator/task-creator.component";
 import {TaskDetailsComponent} from "./task-details/task-details.component";
-import {TasksDashboardComponent} from "./tasks-dashboard/tasks-dashboard.component";
 import {LoginButtonComponent} from "./login-button/login-button.component";
 import {AngularFireModule} from "@angular/fire/compat";
 import {firebaseConfig} from "./credentials";
@@ -29,7 +28,6 @@ import { TaskEditorComponent } from './task-editor/task-editor.component';
     LoginButtonComponent,
     TaskCreatorComponent,
     TaskDetailsComponent,
-    TasksDashboardComponent,
     TaskEditorComponent
   ],
   bootstrap: [AppComponent],
