@@ -27,10 +27,6 @@ export class TasksService {
     return taskDoc.valueChanges({ id: id });
   }
 
-  getTaskByName(name: string): Observable<any[]> {
-    return this.db.collection(this.path, ref => ref.where('name', '==', name)).valueChanges({ id: 'key' });
-  }
-
   getTasksByTimespan(type: AimSpan): Observable<Aim[]> {
     return this.db.collection(this.path, ref => ref.where('spanType', '==', type.valueOf())).valueChanges({ id: 'key' }) as Observable<Aim[]>;
   }
