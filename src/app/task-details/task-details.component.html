@@ -22,11 +22,17 @@
       <div class="detail-label">Znaczniki</div>
       <div class="detail-content">{{ task?.tags }}</div>
     </div>
-
+    <div class="detail-section">
+      <div class="detail-label">Rok</div>
+      <div class="detail-content">{{ task?.year }}</div>
+    </div>
+    
     <div class="button-container">
+      <button class="cancel-button" (click)="goBack()">Anuluj</button>
       <button class="delete-button" (click)="deleteTask()">Usuń cel</button>
       <button class="edit-button" (click)="enterEditMode()">Edytuj cel</button>
     </div>
+
   </div>
 </div>
 
