@@ -1,7 +1,7 @@
 export interface Task {
   id: string;
   name: string;
+  priority: string;
   description: string;
-  date_created: string;
-  group_id: string
+  tags: string;
 }

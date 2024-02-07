@@ -9,7 +9,7 @@ import {doc} from "@angular/fire/firestore";
 })
 export class TasksService {
 
-  private path = "tasks"
+  private path = "test"
   tasks: AngularFirestoreCollection<Task>;
 
   constructor(private db: AngularFirestore) {

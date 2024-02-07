@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 })
 export class TaskDetailsComponent implements OnInit {
   task: Task | undefined;
+  editMode: boolean = false
 
   constructor(
     private route: ActivatedRoute,
@@ -44,5 +45,29 @@ export class TaskDetailsComponent implements OnInit {
           this.goBack();
         });
     }
+  }
+  deleteTask(): void {
+    if (this.task) {
+      this.tasksService.deleteTask(this.task.id)
+        .then(() => {
+          this.goBack();
+        });
+    }
+  }
+  editTask(): void {
+    if (this.task) {
+      this.tasksService.updateTask(this.task)
+        .then(task => {
+          this.goBack();
+        });
+    }
+  }
+  enterEditMode(): void {
+    this.editMode = true;
+  }
+  
+  exitEditMode(): void {
+    this.editMode = false;
+    this.getTask();
   }
 }

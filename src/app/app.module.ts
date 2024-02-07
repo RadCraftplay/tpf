@@ -13,7 +13,7 @@ import {LoginButtonComponent} from "./login-button/login-button.component";
 import {AngularFireModule} from "@angular/fire/compat";
 import {firebaseConfig} from "./credentials";
 import {HomeComponent} from "./home/home.component";
-
+import { TaskEditorComponent } from './task-editor/task-editor.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -29,7 +29,8 @@ import {HomeComponent} from "./home/home.component";
     LoginButtonComponent,
     TaskCreatorComponent,
     TaskDetailsComponent,
-    TasksDashboardComponent
+    TasksDashboardComponent,
+    TaskEditorComponent
   ],
   bootstrap: [AppComponent],
   providers: [{provide: FIREBASE_OPTIONS, useValue: firebaseConfig}],

@@ -1,0 +1,68 @@
+.task-details-container {
+    max-width: 60vw;
+    margin: 5vh auto;
+    padding: 2vh 4vw;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  h2 {
+    font-size: 1vw;
+    margin-bottom: 1.5vh;
+  }
+  
+  hr {
+    width: 100%;
+    margin-bottom: 2vh;
+  }
+  
+  .detail-section {
+    width: 100%;
+    margin-bottom: 4vh;
+  }
+  
+  .detail-label {
+    font-weight: bold;
+  }
+  
+  .detail-content {
+    margin-top: 0.5vh;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  .edit-button {
+    background-color: white;
+    color: #000000;
+    padding: 1vh 4vw;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 1vh;
+    margin-left: 1vw; 
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button {
+    background-color: #ff0000;
+    color: white;
+    padding: 1vh 4vw;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 1vh;
+    transition: background-color 0.3s;
+  }
+  
+  .delete-button:hover,
+  .edit-button:hover {
+    filter: brightness(90%);
+  }
+  
