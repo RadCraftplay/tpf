@@ -1,9 +1,10 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { ListHeaderComponent } from '../list-header/list-header.component';
 import { AimGroupComponent } from '../aim-group/aim-group.component';
 import { TimespannedList } from '../models/aim-list';
 import { GroupedAims } from '../models/ui';
-import { AimSpan } from '../models/aim';
+import { Aim, AimSpan } from '../models/aim';
+import { groupBy } from '../common';
 
 @Component({
   selector: 'app-timespan-list',
@@ -12,27 +13,42 @@ import { AimSpan } from '../models/aim';
   templateUrl: './timespan-list.component.html',
   styleUrl: './timespan-list.component.css'
 })
-export class TimespanListComponent implements OnInit {
+export class TimespanListComponent implements OnInit, OnChanges {
   @Input() aimSource : TimespannedList | undefined;
   groups : GroupedAims[] | undefined;
 
   constructor() {}
 
+  updateSources() {
+    this.aimSource?.getAims().subscribe(data =>
+      this.groups = this.mapToGroups(
+        groupBy(
+          data,
+          (aim) => [aim.year, aim.spanValue]
+        )
+      )
+    )
+  }
+
   ngOnInit(): void {
-    this.groups = [
-      new GroupedAims([
-      {
-        id: "1",
-        name: "Przykładowe zadanie",
-        owner: "radcraftplay2@gmail.com",
-        priority: 1,
-        description: "Opis zadania",
-        done: false,
-        tags: [ "przyklad" ],
-        year: 2024,
-        spanType: 1,
-        spanValue: 1
-    }], 2024, AimSpan.Month, 2)
-    ]
+    this.updateSources()
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    this.updateSources()
+  }
+
+  mapToGroups(map: Map<[number, number], Aim[]>) : GroupedAims[] {
+    let groups : GroupedAims[] = []
+    map.forEach((aims, [year, spanValue]) => {
+      groups.push(new GroupedAims(
+        aims,
+        year,
+        this.aimSource?.timeSpan || AimSpan.Year,
+        spanValue
+      ))
+    })
+
+    return groups;
   }
 }
