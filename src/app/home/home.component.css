@@ -58,10 +58,10 @@
     margin: 8px 0px;
 }
 
-/* TODO: Maksymalny rozmiar tej sekcji nie powinien być większy niż 1200px */
 #features {
     display: flex;
     max-width: 1200px;
+    margin: auto;
     width: 100%
 }
 
@@ -81,6 +81,7 @@
     border: 2px solid rgba(0, 0, 0, 0.5);
     border-radius: 5px;
 }
+
 @media (max-width: 1200px) {
     #features {
         flex-direction: column;
