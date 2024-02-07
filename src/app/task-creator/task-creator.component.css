@@ -99,7 +99,31 @@
     padding: 1vh;
     box-sizing: border-box;
   }
+
+  .year-and-number-inputs {
+    display: flex;
+    justify-content: column;
+  }
   
+  .year-and-number-inputs input[type="number"] {
+    border: 2px solid #ccc;
+    margin-bottom: 1vh;
+    border-radius: 5px;
+    padding: 1vh;
+    box-sizing: border-box;
+    width: 48%;
+  }
+
+  .spacer {
+    width: 100px;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .save-button {
     background-color: #4caf50;
     color: white;
@@ -107,12 +131,19 @@
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    margin-top: 1.5vh;
-    align-self: flex-end;
     transition: background-color 0.3s;
   }
-  
+
   .save-button:hover {
     background-color: #45a049;
   }
-  
+
+  .cancel-button {
+    background-color: white;
+    color: #000000;
+    padding: 1vh 4vw;
+    border: 2px solid #000000;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }

@@ -17,10 +17,11 @@ export class TaskCreatorComponent {
     this.location.back();
   }
 
-  add(name: string, priority: string, description: string, tags: string, ): void {
+  add(name: string, priority: number, description: string, tags: string, year: number, spanValue: number): void {
     name = name.trim();
     if (!name) { return; }
-    const task = { name: name, priority: priority, description: description, tags: tags } as Task ;
+    const tagArray = tags.split(',').map(tag => tag.trim());
+    const task = { name: name, priority: priority, description: description, tags: tagArray, year: year, spanValue: spanValue } as Task ;
     this.tasksService.addTask(task)
       .then(task => {
         this.goBack()
