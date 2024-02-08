@@ -22,7 +22,9 @@
     width: 100%;
     margin-bottom: 1.5vh;
   }
-  
+  .input-section textarea:hover {
+    border-color: #000000;
+  }
   .input-section textarea {
     border: 2px solid #ccc;
     border-radius: 5px;
