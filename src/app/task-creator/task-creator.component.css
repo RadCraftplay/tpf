@@ -64,61 +64,60 @@
     height: 0;
   }
   
-  /*po interakcji*/
+    /*po interakcji*/
   
-  .priority-options input[value="4"]:checked + span {
-    background-color: #ff0000;
-    border-color: #ff0000;
-  }
+    .priority-options input[value="4"]:checked + span {
+      background-color: #ff0000;
+      border-color: #ff0000;
+    }
+    
+    .priority-options input[value="3"]:checked + span {
+      background-color: #cfcf00;
+      border-color: #cfcf00;
+    }
+    
+    .priority-options input[value="2"]:checked + span {
+      background-color: #008000;
+      border-color: #008000;
+    }
+    
+    .priority-options input[value="1"]:checked + span {
+      background-color: #808080;
+      border-color: #808080;
+    }
+    
+    .priority-options input:checked + span::before {
+      color: #fff;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 12px;
+    }
+    
+    /*przed interakcją*/
+    
+    .priority-options input[value="4"]:not(:checked) + span {
+      border-color: #ff0000;
+    }
+    
+    .priority-options input[value="3"]:not(:checked) + span {
+      border-color: #cfcf00;
+    }
+    
+    .priority-options input[value="2"]:not(:checked) + span {
+      border-color: #008000;
+    }
+    
+    .priority-options input[value="1"]:not(:checked) + span {
+      border-color: #808080;
+    }
   
-  .priority-options input[value="3"]:checked + span {
-    background-color: #cfcf00;
-    border-color: #cfcf00;
-  }
-  
-  .priority-options input[value="2"]:checked + span {
-    background-color: #008000;
-    border-color: #008000;
-  }
-  
-  .priority-options input[value="1"]:checked + span {
-    background-color: #808080;
-    border-color: #808080;
-  }
-  
-  .priority-options input:checked + span::before {
-    color: #fff;
-    display: block;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 12px;
-  }
-  
-  /*przed interakcją*/
-  
-  .priority-options input[value="4"]:not(:checked) + span {
-    border-color: #ff0000;
-  }
-  
-  .priority-options input[value="3"]:not(:checked) + span {
-    border-color: #cfcf00;
-  }
-  
-  .priority-options input[value="2"]:not(:checked) + span {
-    border-color: #008000;
-  }
-  
-  .priority-options input[value="1"]:not(:checked) + span {
-    border-color: #808080;
-  }
-
-  .priority-options input:focus + span,
-  .priority-options input:hover + span {
-    background-color: #4d85ff;
-    border-color: #4d85ff !important; /*important aby border był taki sam*/
-  }
+    .priority-options input:hover + span {
+      background-color: #4d85ff;
+      border-color: #4d85ff !important; /*important aby border był taki sam*/
+    }
   
   .label-text {
     margin-left: 25px;
