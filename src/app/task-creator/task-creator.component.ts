@@ -16,11 +16,13 @@ export class TaskCreatorComponent {
   goBack(): void {
     this.location.back();
   }
-
-  add(name: string, priority: number, description: string, tags: string, year: number, spanValue: number): void {
+  selectedDate: Date = new Date();
+  add(name: string, priority: number, description: string, tags: string): void {
     name = name.trim();
     if (!name) { return; }
     const tagArray = tags.split(',').map(tag => tag.trim());
+    const year = this.selectedDate.getFullYear();
+    const spanValue = this.getWeekOfMonth(this.selectedDate);
     const task = { name: name, priority: priority, description: description, tags: tagArray, year: year, spanValue: spanValue } as Task ;
     this.tasksService.addTask(task)
       .then(task => {
@@ -30,5 +32,11 @@ export class TaskCreatorComponent {
   priority: string = '';
   setPriority(priority: string): void {
     this.priority = priority;
+  }
+  private getWeekOfMonth(date: Date): number {
+    const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
+    const dayOfWeek = firstDayOfMonth.getDay() - 1; // Zwraca 0 dla poniedziałku
+    const remainingDays = date.getDate() - 1;
+    return Math.ceil((dayOfWeek + remainingDays) / 7);
   }
 }
