@@ -63,7 +63,8 @@
   }
   
   .delete-button:hover,
-  .edit-button:hover {
+  .edit-button:hover,
+  .cancel-button:hover {
     filter: brightness(90%);
   }
   
@@ -74,5 +75,7 @@
     border: 2px solid #000000;
     border-radius: 20px;
     cursor: pointer;
+    margin-top: 1vh;
+    margin-left: 1vw; 
     transition: background-color 0.3s;
   }

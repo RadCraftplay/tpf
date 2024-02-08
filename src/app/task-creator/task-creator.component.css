@@ -177,7 +177,7 @@
   .save-button:hover {
     background-color: #45a049;
   }
-
+  
   .cancel-button {
     background-color: white;
     color: #000000;
@@ -185,5 +185,10 @@
     border: 2px solid #000000;
     border-radius: 20px;
     cursor: pointer;
+    margin-top: 1vh;
+    margin-left: 1vw; 
     transition: background-color 0.3s;
+  }
+  .cancel-button:hover {
+    filter: brightness(90%);
   }
