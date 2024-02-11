@@ -14,6 +14,7 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {firebaseConfig} from "./credentials";
 import {HomeComponent} from "./home/home.component";
 import { TaskEditorComponent } from './task-editor/task-editor.component';
+import {VoiceTranscriptionComponent} from "./voice-transcription/voice-transcription.component";
 @NgModule({
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import { TaskEditorComponent } from './task-editor/task-editor.component';
     TaskCreatorComponent,
     TaskDetailsComponent,
     TasksDashboardComponent,
-    TaskEditorComponent
+    TaskEditorComponent,
+    VoiceTranscriptionComponent
   ],
   bootstrap: [AppComponent],
   providers: [{provide: FIREBASE_OPTIONS, useValue: firebaseConfig}],
