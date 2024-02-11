@@ -1,0 +1,10 @@
+<head>
+  <!-- Link to Font Awesome CSS via CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<div>
+  <button class="transcription-button" (click)="toggleRecognition()">
+    <i class="{{ recognitionActive ? 'fas fa-stop' : 'fas fa-microphone' }}"></i>
+  </button>
+</div>
