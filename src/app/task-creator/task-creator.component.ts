@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { TasksService } from "../services/tasks-service/tasks-service";
 import { Location } from '@angular/common';
 import { Aim } from '../models/aim';
+import { getAuth } from 'firebase/auth';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-task-creator',
@@ -10,8 +12,14 @@ import { Aim } from '../models/aim';
 })
 export class TaskCreatorComponent {
 
-  constructor(private tasksService: TasksService,
-              private location: Location) { }
+  private readonly spanType: number = 0;
+
+  constructor(private tasksService: TasksService, private location: Location, route: ActivatedRoute) {
+    const typeStr = route.snapshot.paramMap.get('type')
+    if (typeStr != null) {
+      this.spanType = +typeStr
+    }
+  }
 
   goBack(): void {
     this.location.back();
@@ -20,8 +28,21 @@ export class TaskCreatorComponent {
   add(name: string, priority: number, description: string, tags: string, year: number, spanValue: number): void {
     name = name.trim();
     if (!name) { return; }
+
+    const auth = getAuth();
+
     const tagArray = tags.split(',').map(tag => tag.trim());
-    const task = { name: name, priority: priority, description: description, tags: tagArray, year: year, spanValue: spanValue } as Aim ;
+    const task = {
+      description: description,
+      done: false,
+      name: name,
+      owner: auth.currentUser?.uid,
+      priority: priority,
+      spanType: this.spanType,
+      spanValue: spanValue,
+      tags: tagArray,
+      year: year,
+    } as Aim ;
     this.tasksService.addTask(task)
       .then(task => {
         this.goBack()

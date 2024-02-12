@@ -79,7 +79,7 @@ export class DummyTagList implements AimList {
 }
 
 export class TimespannedList implements AimList {
-    private readonly span: AimSpan
+    private readonly span: AimSpan = AimSpan.Month
     private readonly service: TasksService
 
     constructor(span: AimSpan, tasksService: TasksService) {
