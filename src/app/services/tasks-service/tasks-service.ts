@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs";
+import {Observable, map} from "rxjs";
 import {AngularFirestore, AngularFirestoreCollection} from "@angular/fire/compat/firestore";
 import { Aim, AimSpan } from '../../models/aim';
 
@@ -26,7 +26,25 @@ export class TasksService {
   }
 
   getTasksByTimespan(type: AimSpan): Observable<Aim[]> {
-    return this.db.collection(this.path, ref => ref.where('spanType', '==', type.valueOf())).valueChanges({ id: 'key' }) as Observable<Aim[]>;
+    return this.db.collection(this.path, ref => ref.where('spanType', '==', type.valueOf()))
+      .snapshotChanges()
+      .pipe(map(changes => changes.map(c => {
+        const docId = c.payload.doc.id;
+        const data: Aim = c.payload.doc.data() as Aim; // No ID
+        const aim: Aim = {
+          description: data.description,
+          done: data.done,
+          id: docId,
+          name: data.name,
+          owner: data.owner,
+          priority: data.priority,
+          spanType: data.spanType,
+          spanValue: data.spanValue,
+          tags: data.tags,
+          year: data.year,
+        }
+        return aim;
+      }))) as Observable<Aim[]>;
   }
 
   async addTask(task: Aim): Promise<Aim> {
