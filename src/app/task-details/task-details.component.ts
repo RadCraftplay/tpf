@@ -12,7 +12,7 @@ import { Location } from '@angular/common';
 export class TaskDetailsComponent implements OnInit {
   task: Task | undefined;
   editMode: boolean = false
-
+  selectedDate: Date = new Date();
   constructor(
     private route: ActivatedRoute,
     private tasksService: TasksService,

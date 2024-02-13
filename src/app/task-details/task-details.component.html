@@ -1,39 +1,47 @@
-<div *ngIf="!editMode">
-  <div class="task-details-container">
-    <h2>Szczegóły celu</h2>
-    <hr>
+<div *ngIf="!editMode" class="task-details-container">
+  <h2>Szczegóły celu</h2>
+  <hr>
 
-    <div class="detail-section">
-      <div class="detail-label">Nazwa</div>
-      <div class="detail-content">{{ task?.name }}</div>
-    </div>
+  <div style="display: flex; justify-content: space-between; width: 100%;">
+    <div style="width: 60%;">
+      <div class="detail-section">
+        <div class="detail-label">Nazwa</div>
+        <div class="detail-content">{{ task?.name }}</div>
+      </div>
 
-    <div class="detail-section">
-      <div class="detail-label">Priorytet</div>
-      <div class="detail-content">{{ task?.priority }}</div>
-    </div>
-    
-    <div class="detail-section">
-      <div class="detail-label">Opis</div>
-      <div class="detail-content">{{ task?.description }}</div>
-    </div>
+      <div class="detail-section">
+        <div class="detail-label">Priorytet</div>
+        <div class="detail-content">{{ task?.priority }}</div>
+      </div>
+      
+      <div class="detail-section">
+        <div class="detail-label">Opis</div>
+        <div class="detail-content">{{ task?.description }}</div>
+      </div>
 
-    <div class="detail-section">
-      <div class="detail-label">Znaczniki</div>
-      <div class="detail-content">{{ task?.tags }}</div>
-    </div>
-    <div class="detail-section">
-      <div class="detail-label">Rok</div>
-      <div class="detail-content">{{ task?.year }}</div>
-    </div>
-    
-    <div class="button-container">
-      <button class="cancel-button" (click)="goBack()">Anuluj</button>
-      <button class="delete-button" (click)="deleteTask()">Usuń cel</button>
-      <button class="edit-button" (click)="enterEditMode()">Edytuj cel</button>
+      <div class="detail-section">
+        <div class="detail-label">Znaczniki</div>
+        <div class="detail-content">{{ task?.tags }}</div>
+      </div>
+      <div class="detail-section">
+        <div class="detail-label">Rok</div>
+        <div class="detail-content">{{ task?.year }}</div>
+      </div>
     </div>
 
+    <div style="width: 35%;">
+      <div class="calendar-container">
+        <mat-calendar [startAt]="selectedDate"></mat-calendar>
+      </div>
+    </div>
   </div>
+
+  <div class="button-container">
+    <button class="cancel-button" (click)="goBack()">Anuluj</button>
+    <button class="delete-button" (click)="deleteTask()">Usuń cel</button>
+    <button class="edit-button" (click)="enterEditMode()">Edytuj cel</button>
+  </div>
+
 </div>
 
 <div *ngIf="editMode">
