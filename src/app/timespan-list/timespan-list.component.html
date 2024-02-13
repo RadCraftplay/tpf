@@ -1,5 +1,5 @@
 <div id="timespan-list-container">
-    <app-list-header [name]="aimSource!.getName()"></app-list-header>
+    <app-list-header [name]="aimSource!.getName()" [spanType]="aimSource?.timeSpan!"></app-list-header>
     <div class="aim-container">
         @for (group of groups; track groups) {
             <app-aim-group [aims]="group.aims" [span]="group.span" [spanValue]="group.spanValue" [year]="group.year"></app-aim-group>

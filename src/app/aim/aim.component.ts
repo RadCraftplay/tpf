@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Aim } from '../models/aim';
+import { TasksService } from '../services/tasks-service/tasks-service';
 
 @Component({
   selector: 'app-aim',
@@ -15,7 +16,11 @@ export class AimComponent {
   public get aimLink() : string {
     return `/detail/${this.aim?.id}`
   }
-  
 
-  constructor() { }
+  public toggle() {
+    this.aim!.done = !this.aim!.done
+    this.tasksService.updateTask(this.aim!)
+  }
+
+  constructor(private tasksService: TasksService) { }
 }
