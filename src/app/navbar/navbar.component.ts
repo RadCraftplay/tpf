@@ -20,7 +20,7 @@ export class NavbarComponent {
   monthList: AimList = new EmptyList("Miesiące")
   yearList: AimList = new EmptyList("Lata")
 
-  selectedListName = this.tagList.getName()
+  selectedListName = this.weekList.getName()
 
   @Output() selectedListChanged = new EventEmitter<AimList>;
 
