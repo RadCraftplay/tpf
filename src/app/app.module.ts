@@ -13,6 +13,10 @@ import {AngularFireModule} from "@angular/fire/compat";
 import {firebaseConfig} from "./credentials";
 import {HomeComponent} from "./home/home.component";
 import { TaskEditorComponent } from './task-editor/task-editor.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -20,7 +24,9 @@ import { TaskEditorComponent } from './task-editor/task-editor.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [
     AppComponent,
@@ -31,7 +37,7 @@ import { TaskEditorComponent } from './task-editor/task-editor.component';
     TaskEditorComponent
   ],
   bootstrap: [AppComponent],
-  providers: [{provide: FIREBASE_OPTIONS, useValue: firebaseConfig}],
+  providers: [{provide: FIREBASE_OPTIONS, useValue: firebaseConfig}, provideAnimationsAsync()],
   exports: [
     LoginButtonComponent
   ]

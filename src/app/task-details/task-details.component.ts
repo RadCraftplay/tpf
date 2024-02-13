@@ -12,7 +12,7 @@ import { Aim } from '../models/aim';
 export class TaskDetailsComponent implements OnInit {
   task: Aim | undefined;
   editMode: boolean = false
-
+  selectedDate: Date = new Date();
   constructor(
     private route: ActivatedRoute,
     private tasksService: TasksService,
