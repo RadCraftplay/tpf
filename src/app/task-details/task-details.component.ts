@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../services/tasks-service/task';
 import { ActivatedRoute } from "@angular/router";
 import { TasksService } from "../services/tasks-service/tasks-service";
 import { Location } from '@angular/common';
+import { Aim } from '../models/aim';
 
 @Component({
   selector: 'app-task-details',
@@ -10,9 +10,9 @@ import { Location } from '@angular/common';
   styleUrl: './task-details.component.css'
 })
 export class TaskDetailsComponent implements OnInit {
-  task: Task | undefined;
+  task: Aim | undefined;
   editMode: boolean = false
-
+  selectedDate: Date = new Date();
   constructor(
     private route: ActivatedRoute,
     private tasksService: TasksService,

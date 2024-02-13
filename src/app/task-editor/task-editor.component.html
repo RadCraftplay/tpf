@@ -11,26 +11,25 @@
       <label class="bold-label">Priorytet</label>
       <div class="priority-options">
         <label>
-          <input type="radio" name="priority" value="Wysoki" [(ngModel)]="priority">
+          <input type="radio" name="priority" value="4" [(ngModel)]="priority">
           <span class="custom-checkbox"></span> Wysoki
         </label>
         <label>
-          <input type="radio" name="priority" value="Średni" [(ngModel)]="priority">
+          <input type="radio" name="priority" value="3" [(ngModel)]="priority">
           <span class="custom-checkbox"></span> Średni
         </label>
         <label>
-          <input type="radio" name="priority" value="Niski" [(ngModel)]="priority">
+          <input type="radio" name="priority" value="2" [(ngModel)]="priority">
           <span class="custom-checkbox"></span> Niski
         </label>
         <label>
-          <input type="radio" name="priority" value="Brak priorytetu" [(ngModel)]="priority">
+          <input type="radio" name="priority" value="1" [(ngModel)]="priority">
           <span class="custom-checkbox"></span> Brak priorytetu
         </label>
       </div>
     </div>
   
     <div class="input-section">
-      <label class="bold-label">Opis</label>
       <textarea id="new-task-description" [(ngModel)]="editedDescription" rows="10" placeholder="Opis celu"></textarea>
     </div>
   
@@ -38,8 +37,22 @@
       <label class="bold-label">Znaczniki</label>
       <textarea id="new-task-tags" [(ngModel)]="editedTags" rows="1" placeholder="Dodaj znaczniki"></textarea>
     </div>
-    <button type="button" class="save-button" (click)="saveChanges()">
+
+    <div class="input-section year-and-number-inputs">
+      <div class="input-field">
+        <input matInput [matDatepicker]="picker" placeholder="Wybierz datę" [(ngModel)]="selectedDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </div>
+    </div>
+    
+    <div class="button-container">
+      <button class="cancel-button" (click)="goBack()">
+        Anuluj
+      </button>
+      <button type="button" class="save-button" (click)="saveChanges()">
         Zapisz zmiany
       </button>
+    </div>
   </div>
   

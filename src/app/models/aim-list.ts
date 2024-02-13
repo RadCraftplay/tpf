@@ -1,5 +1,6 @@
 import {of, Observable, filter, map} from "rxjs";
 import {Aim, AimSpan} from "./aim"
+import { TasksService } from "../services/tasks-service/tasks-service";
 
 export enum ListType {
     Timespan,
@@ -12,60 +13,31 @@ export interface AimList {
     getAims() : Observable<Aim[]>;
 }
 
-export class DummyTagList implements AimList {
+export class EmptyList implements AimList {
 
-    private readonly tagName: string;
-
-    constructor(tag: string) {
-        this.tagName =  tag;
-    }   
+    constructor(private readonly name: string = "") {
+    }
 
     getName(): string {
-        return "#" + this.tagName;
+        return this.name;
     }
 
     getType(): ListType {
         return ListType.Tag;
     }
-    
-    getAims(): Observable<Aim[]> {
-        const emitter : Observable<Aim[]> = of([
-        {
-            id: "1",
-            name: "Przykładowe zadanie",
-            owner: "radcraftplay2@gmail.com",
-            priority: 1,
-            description: "Opis zadania",
-            done: false,
-            tags: [ "przyklad" ],
-            year: 2024,
-            spanType: 1,
-            spanValue: 1
-        },
-        {
-            id: "2",
-            name: "Zadanie zrobione",
-            owner: "radcraftplay2@gmail.com",
-            priority: 1,
-            description: "Opis skończonego zadania",
-            done: true,
-            tags: [ "przyklad", "ukończone" ],
-            year: 2024,
-            spanType: 2,
-            spanValue: 2
-        }]);
 
-        return emitter;
+    getAims(): Observable<Aim[]> {
+        return of();
     }
 }
 
 export class TimespannedList implements AimList {
-    private readonly span: AimSpan
-    private readonly inner: AimList
+    private readonly span: AimSpan = AimSpan.Month
+    private readonly service: TasksService
 
-    constructor(span: AimSpan, inner: AimList) {
+    constructor(span: AimSpan, tasksService: TasksService) {
         this.span = span;
-        this.inner = inner;
+        this.service = tasksService;
     }
     
     public get timeSpan() : AimSpan {
@@ -90,12 +62,6 @@ export class TimespannedList implements AimList {
     }
 
     getAims(): Observable<Aim[]> {
-        const spanNum = this.span.valueOf()
-
-        return this.inner.getAims().pipe(
-            map(aims => aims.filter(
-                aim => aim.spanType === spanNum)
-            )
-        )
+        return this.service.getTasksByTimespan(this.timeSpan)
     }
 }

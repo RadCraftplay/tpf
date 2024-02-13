@@ -8,12 +8,15 @@ import {AppRoutingModule} from "./app-routing.module";
 import {AppComponent} from "./app.component";
 import {TaskCreatorComponent} from "./task-creator/task-creator.component";
 import {TaskDetailsComponent} from "./task-details/task-details.component";
-import {TasksDashboardComponent} from "./tasks-dashboard/tasks-dashboard.component";
 import {LoginButtonComponent} from "./login-button/login-button.component";
 import {AngularFireModule} from "@angular/fire/compat";
 import {firebaseConfig} from "./credentials";
 import {HomeComponent} from "./home/home.component";
 import { TaskEditorComponent } from './task-editor/task-editor.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 import {VoiceTranscriptionComponent} from "./voice-transcription/voice-transcription.component";
 @NgModule({
   imports: [
@@ -22,7 +25,9 @@ import {VoiceTranscriptionComponent} from "./voice-transcription/voice-transcrip
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    AngularFireModule.initializeApp(firebaseConfig)
+    AngularFireModule.initializeApp(firebaseConfig),
+    MatDatepickerModule,
+    MatNativeDateModule
   ],
   declarations: [
     AppComponent,
@@ -30,12 +35,11 @@ import {VoiceTranscriptionComponent} from "./voice-transcription/voice-transcrip
     LoginButtonComponent,
     TaskCreatorComponent,
     TaskDetailsComponent,
-    TasksDashboardComponent,
     TaskEditorComponent,
     VoiceTranscriptionComponent
   ],
   bootstrap: [AppComponent],
-  providers: [{provide: FIREBASE_OPTIONS, useValue: firebaseConfig}],
+  providers: [{provide: FIREBASE_OPTIONS, useValue: firebaseConfig}, provideAnimationsAsync()],
   exports: [
     LoginButtonComponent
   ]

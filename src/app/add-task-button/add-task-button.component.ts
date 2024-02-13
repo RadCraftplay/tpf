@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { AimSpan } from '../models/aim';
 
 @Component({
   selector: 'app-add-task-button',
@@ -8,5 +9,10 @@ import { Component } from '@angular/core';
   styleUrl: './add-task-button.component.css'
 })
 export class AddTaskButtonComponent {
+  @Input() spanType : AimSpan = AimSpan.Month
 
+  public get createUrl() : string {
+    return `/create/${this.spanType.valueOf()}`
+  }
+  
 }

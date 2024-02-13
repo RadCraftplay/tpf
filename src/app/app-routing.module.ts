@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import {TasksDashboardComponent} from "./tasks-dashboard/tasks-dashboard.component";
 import {TaskDetailsComponent} from "./task-details/task-details.component";
 import {TaskCreatorComponent} from "./task-creator/task-creator.component";
 import { HomeComponent } from './home/home.component';
@@ -9,10 +8,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'dashboard', component: TasksDashboardComponent },
-  { path: 'dashboard2', component: DashboardComponent },
+  { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: TaskDetailsComponent },
-  { path: 'create', component: TaskCreatorComponent },
+  { path: 'create/:type', component: TaskCreatorComponent },
   { path: 'home', component: HomeComponent },
 ];
 

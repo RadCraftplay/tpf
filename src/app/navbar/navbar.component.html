@@ -5,5 +5,7 @@
     <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/year.svg" [list]="yearList"></app-navbar-list-selector>
     <app-separator></app-separator>
     <app-navbar-header name="Znaczniki"></app-navbar-header>
-    <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/tag.svg" [list]="tagList"></app-navbar-list-selector>
+    @for (list of tagLists; track tagLists) {
+        <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/tag.svg" [list]="list"></app-navbar-list-selector>
+    }
 </div>

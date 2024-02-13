@@ -5,16 +5,31 @@
 }
 
 #prompt-image {
+    position: relative;
     width: 100%;
     min-height: 600px;
+    background-image: inherit;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
 
-    /* TODO: Zdjęcie w tle powinoo być rozmazane */
+#prompt-image::before {
+    content: "";
+    position: absolute;
+    top: -64px;
+    right: -64px;
+    bottom: -64px;
+    left: -64px;
     background-image: url("../../assets/img/home-background.webp");
     background-size: cover;
     background-position: center;
+    filter: blur(16px);
+    z-index: -1;
 }
 
 #login-prompt {
+    position: relative;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -23,6 +38,7 @@
 
     margin: auto;
     transform: translate(0, 50%);
+    max-width: 80%;
     max-width: 900px;
 
     font-weight: 600;
@@ -42,9 +58,11 @@
     margin: 8px 0px;
 }
 
-/* TODO: Maksymalny rozmiar tej sekcji nie powinien być większy niż 1200px */
 #features {
     display: flex;
+    max-width: 1200px;
+    margin: auto;
+    width: 100%
 }
 
 #features div{
@@ -57,7 +75,14 @@
     position: relative;
 }
 
-/* TODO: Dobrze by było gdyby zdjęcia były otoczone ramkami */
 .feature-preview img {
-  width: 100%;
+    width: 100%;
+    border: 2px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+@media (max-width: 1200px) {
+    #features {
+        flex-direction: column;
+    }
 }
