@@ -14,7 +14,7 @@ import { NgIf } from '@angular/common';
   styleUrl: './dashboard.component.css'
 })
 export class DashboardComponent {
-  selectedList : AimList = new EmptyList("Tygodnie");
+  selectedList : AimList = new EmptyList("Miesiące");
 
   public get listAsTimespanned() : TimespannedList {
     return this.selectedList as TimespannedList
