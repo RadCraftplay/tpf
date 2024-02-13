@@ -15,7 +15,7 @@ import { TasksService } from '../services/tasks-service/tasks-service';
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
-  tagList: AimList = new EmptyList()
+  tagLists: AimList[] = []
   weekList: AimList = new EmptyList("Tygodnie")
   monthList: AimList = new EmptyList("Miesiące")
   yearList: AimList = new EmptyList("Lata")
@@ -25,7 +25,6 @@ export class NavbarComponent {
   @Output() selectedListChanged = new EventEmitter<AimList>;
 
   constructor(tasksService: TasksService) {
-    this.tagList = new DummyTagList("sample")
     this.weekList = new TimespannedList(AimSpan.Week, tasksService)
     this.monthList = new TimespannedList(AimSpan.Month, tasksService)
     this.yearList = new TimespannedList(AimSpan.Year, tasksService)
