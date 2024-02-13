@@ -49,10 +49,10 @@
   </div>
   
   <div class="button-container">
-    <button class="cancel-button" (click)="goBack()">
+    <button class="secondary" (click)="goBack()">
       Anuluj
     </button>
-    <button class="save-button" (click)="add(taskName.value, +priority, taskDescription.value, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
+    <button class="primary" (click)="add(taskName.value, +priority, taskDescription.value, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
       Zapisz
     </button>
   </div>
