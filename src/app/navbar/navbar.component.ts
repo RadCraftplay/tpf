@@ -3,7 +3,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { NavbarHeaderComponent } from '../navbar-header/navbar-header.component';
 import { NavbarListSelectorComponent } from '../navbar-list-selector/navbar-list-selector.component';
 import { SeparatorComponent } from '../separator/separator.component';
-import { AimList, DummyTagList, EmptyList, TimespannedList } from '../models/aim-list';
+import { AimList, EmptyList, TimespannedList } from '../models/aim-list';
 import { AimSpan } from '../models/aim';
 import { TasksService } from '../services/tasks-service/tasks-service';
 

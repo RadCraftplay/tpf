@@ -31,53 +31,6 @@ export class EmptyList implements AimList {
     }
 }
 
-export class DummyTagList implements AimList {
-
-    private readonly tagName: string;
-
-    constructor(tag: string) {
-        this.tagName =  tag;
-    }   
-
-    getName(): string {
-        return "#" + this.tagName;
-    }
-
-    getType(): ListType {
-        return ListType.Tag;
-    }
-    
-    getAims(): Observable<Aim[]> {
-        const emitter : Observable<Aim[]> = of([
-        {
-            id: "1",
-            name: "Przykładowe zadanie",
-            owner: "radcraftplay2@gmail.com",
-            priority: 1,
-            description: "Opis zadania",
-            done: false,
-            tags: [ "przyklad" ],
-            year: 2024,
-            spanType: 1,
-            spanValue: 1
-        },
-        {
-            id: "2",
-            name: "Zadanie zrobione",
-            owner: "radcraftplay2@gmail.com",
-            priority: 1,
-            description: "Opis skończonego zadania",
-            done: true,
-            tags: [ "przyklad", "ukończone" ],
-            year: 2024,
-            spanType: 2,
-            spanValue: 2
-        }]);
-
-        return emitter;
-    }
-}
-
 export class TimespannedList implements AimList {
     private readonly span: AimSpan = AimSpan.Month
     private readonly service: TasksService
