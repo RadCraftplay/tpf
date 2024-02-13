@@ -159,7 +159,18 @@
   .spacer {
     width: 100px;
   }
-
+  .input-field {
+    position: relative;
+  }
+  
+  .mat-datepicker-toggle {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+  }
+  
   .button-container {
     display: flex;
     justify-content: space-between;

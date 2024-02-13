@@ -30,7 +30,6 @@
     </div>
   
     <div class="input-section">
-      <label class="bold-label">Opis</label>
       <textarea id="new-task-description" [(ngModel)]="editedDescription" rows="10" placeholder="Opis celu"></textarea>
     </div>
   
@@ -41,13 +40,9 @@
 
     <div class="input-section year-and-number-inputs">
       <div class="input-field">
-        <label class="bold-label">Rok</label>
-        <textarea id="new-year" [(ngModel)]="editedYear" rows="1" placeholder="Rok" style="resize: none;"></textarea>
-      </div>
-      <div class="spacer"></div>
-      <div class="input-field">
-        <label class="bold-label">Numer tygodnia/miesiąca</label>
-        <textarea id="new-number" [(ngModel)]="editedSpanValue" rows="1" placeholder="Number" style="resize: none;"></textarea>
+        <input matInput [matDatepicker]="picker" placeholder="Wybierz datę" [(ngModel)]="selectedDate">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </div>
     </div>
     

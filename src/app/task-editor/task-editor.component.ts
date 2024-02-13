@@ -18,7 +18,7 @@ export class TaskEditorComponent {
   editedTags: string[] = [];
   editedYear: number = 0;
   editedSpanValue: number = 0;
-
+  selectedDate: Date = new Date();
   constructor(private tasksService: TasksService, private location: Location) {}
 
   ngOnChanges(): void {
