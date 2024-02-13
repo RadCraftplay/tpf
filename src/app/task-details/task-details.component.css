@@ -36,46 +36,38 @@
     justify-content: space-between;
     width: 100%;
   }
-  .right-buttons {
-    display: flex;
-  }
-  .edit-button {
-    background-color: white;
-    color: #000000;
-    padding: 1vh 4vw;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 1vh;
-    margin-left: 1vw; 
-    transition: background-color 0.3s;
-  }
-  
-  .delete-button {
-    background-color: #ff0000;
+
+  button {
+    width: 288px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 48px;
+
+    border-radius: 24px;
+
+    background-color: black;
     color: white;
-    padding: 1vh 4vw;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 1vh;
+    font-size: 20px;
+    font-weight: 600;
+
     transition: background-color 0.3s;
-  }
-  
-  .delete-button:hover,
-  .edit-button:hover,
-  .cancel-button:hover {
+}
+
+button:hover {
     filter: brightness(90%);
-  }
-  
-  .cancel-button {
+}
+
+.primary {
+    background-color: #00CA5D;
+}
+
+.attention {
+    background-color: #CC3C00;
+}
+
+.secondary {
     background-color: white;
-    color: #000000;
-    padding: 1vh 4vw;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 1vh;
-    margin-left: 1vw; 
-    transition: background-color 0.3s;
-  }
+    color: black;
+    border: 1px solid black;
+}
