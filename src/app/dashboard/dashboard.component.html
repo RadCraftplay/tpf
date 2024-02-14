@@ -1,5 +1,5 @@
 <div>
-    <app-navbar (selectedListChanged)="onSelectedListChanged($event)"></app-navbar>
+    <app-navbar (selectedListChanged)="onSelectedListChanged($event)" [dashboardInit]="dashboardInitSubject.asObservable()"></app-navbar>
     <app-separator-vertical></app-separator-vertical>
     <ng-container *ngIf="selectedList.getType() === TAG">
         <app-tag-list [aimSource]="selectedList"></app-tag-list>

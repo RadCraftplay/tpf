@@ -1,5 +1,5 @@
 a {
-    width: 192px;
+    width: 48px;
 
     text-align: center;
     text-decoration: none;
@@ -10,8 +10,8 @@ a {
     border-radius: 24px;
 
     color: white;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: 40px;
+    font-weight: normal;
 }
 
 a:hover {

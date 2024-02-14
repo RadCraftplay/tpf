@@ -22,6 +22,10 @@
     width: 100%;
     margin-bottom: 1.5vh;
   }
+
+  .priority-options label:hover {
+    cursor: pointer;
+  }
   
   .input-section textarea {
     border: 2px solid #ccc;
@@ -175,31 +179,37 @@
     width: 100%;
   }
 
-  .save-button {
-    background-color: #4caf50;
-    color: white;
-    padding: 1vh 4vw;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
+  button {
+    width: 288px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 48px;
 
-  .save-button:hover {
-    background-color: #45a049;
-  }
-  
-  .cancel-button {
-    background-color: white;
-    color: #000000;
-    padding: 1vh 4vw;
-    border: 2px solid #000000;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 1vh;
-    margin-left: 1vw; 
+    border-radius: 24px;
+
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+
     transition: background-color 0.3s;
-  }
-  .cancel-button:hover {
+}
+
+button:hover {
     filter: brightness(90%);
-  }
+}
+
+.primary {
+    background-color: #00CA5D;
+}
+
+.attention {
+    background-color: #CC3C00;
+}
+
+.secondary {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}

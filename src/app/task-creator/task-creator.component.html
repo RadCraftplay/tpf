@@ -3,8 +3,7 @@
   <hr>
 
   <div class="input-section">
-    <label class="bold-label">Nazwa</label>
-    <textarea id="new-task-name" #taskName rows="1" placeholder="Przykładowy cel" style="resize: none;"></textarea>
+    <textarea id="new-task-name" #taskName rows="1" placeholder="Nazwa celu" style="resize: none;"></textarea>
   </div>
 
   <div class="input-section priority-section">
@@ -30,14 +29,12 @@
   </div>
 
   <div class="input-section">
-    <label class="bold-label">Opis</label>
     <textarea id="new-task-description" #taskDescription rows="10" placeholder="Opis celu" style="resize: none;"></textarea>
     <voice-transcription />
   </div>
 
   <div class="input-section">
-    <label class="bold-label">Znaczniki</label>
-    <textarea id="new-task-tags" #taskTags rows="1" placeholder="Dodaj znaczniki" style="resize: none;"></textarea>
+    <textarea id="new-task-tags" #taskTags rows="1" placeholder="Znaczniki oddzielone przecinkami" style="resize: none;"></textarea>
   </div>
 
   <div class="input-section year-and-number-inputs">
@@ -49,10 +46,10 @@
   </div>
   
   <div class="button-container">
-    <button class="cancel-button" (click)="goBack()">
+    <button class="secondary" (click)="goBack()">
       Anuluj
     </button>
-    <button class="save-button" (click)="add(taskName.value, +priority, taskDescription.value, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
+    <button class="primary" (click)="add(taskName.value, +priority, taskDescription.value, taskTags.value); taskName.value=''; taskDescription.value=''; taskTags.value='';">
       Zapisz
     </button>
   </div>
