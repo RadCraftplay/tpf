@@ -7,11 +7,10 @@ import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'detail/:id', component: TaskDetailsComponent },
   { path: 'create/:type', component: TaskCreatorComponent },
-  { path: 'home', component: HomeComponent },
+  { path: '', component: HomeComponent },
 ];
 
 @NgModule({
