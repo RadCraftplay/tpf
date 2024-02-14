@@ -17,9 +17,9 @@ export class AimComponent {
     return `/detail/${this.aim?.id}`
   }
 
-  public toggle() {
+  public async toggle() {
     this.aim!.done = !this.aim!.done
-    this.tasksService.updateTask(this.aim!)
+    await this.tasksService.updateTask(this.aim!)
   }
 
   constructor(private tasksService: TasksService) { }
