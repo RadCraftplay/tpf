@@ -15,6 +15,10 @@
     width: 100%;
   }
 
+  .details-text-container {
+    width: 60%;
+  }
+
   .calendar-container {
     width: 35%;
   }
@@ -97,6 +101,10 @@ button:hover {
 
   .detail-section {
     flex-direction: column;
+  }
+
+  .details-text-container {
+    width: 100%;
   }
 
   .button-container {
