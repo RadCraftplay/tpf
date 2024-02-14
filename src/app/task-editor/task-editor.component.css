@@ -205,3 +205,34 @@
   .cancel-button:hover {
     filter: brightness(90%);
   }
+
+  
+@media (max-width: 1200px) {
+  .task-creator-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 2vh 4vw;
+    border: none;
+  }
+
+  .year-and-number-inputs > div {
+    width: 100%;
+  }
+
+  .input-section {
+    margin-bottom: 12px;
+  }
+
+  .priority-options {
+    flex-direction: column;
+  }
+
+  .button-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  button {
+    width: 100%;
+  }
+}
