@@ -22,6 +22,10 @@
     width: 100%;
     margin-bottom: 1.5vh;
   }
+
+  .priority-options label:hover {
+    cursor: pointer;
+  }
   
   .input-section textarea {
     border: 2px solid #ccc;
