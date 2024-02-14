@@ -2,7 +2,7 @@
   <h2>Szczegóły celu</h2>
   <hr>
 
-  <div style="display: flex; justify-content: space-between; width: 100%;">
+  <div id="details-container">
     <div style="width: 60%;">
       <div class="detail-section">
         <div class="detail-label">Nazwa</div>
@@ -29,10 +29,8 @@
       </div>
     </div>
 
-    <div style="width: 35%;">
-      <div class="calendar-container">
-        <mat-calendar [startAt]="selectedDate"></mat-calendar>
-      </div>
+    <div class="calendar-container">
+      <mat-calendar [startAt]="selectedDate"></mat-calendar>
     </div>
   </div>
 
