@@ -21,11 +21,16 @@ export class LoginButtonComponent {
     const provider = new GoogleAuthProvider();
 
     const auth = getAuth();
+    if (auth.currentUser != null) {
+      location.assign("/dashboard");
+    }
+
     signInWithPopup(auth, provider)
       .then((result) => {
         const user = result.user;
         // TODO -> user logged, handle that ;)
-        console.log("Hello " + user.email + "!")
+        console.log(user.uid);
+        location.assign("/dashboard");
       }).catch((error) => {
       const email = error.customData.email;
       console.error("User with email: " + email + " attempted to login but error occured.")
