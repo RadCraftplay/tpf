@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { TasksService } from "../services/tasks-service/tasks-service";
 import { Location } from '@angular/common';
-import { Aim } from '../models/aim';
+import { Aim, AimPriority } from '../models/aim';
 
 @Component({
   selector: 'app-task-details',
@@ -33,6 +33,22 @@ export class TaskDetailsComponent implements OnInit {
         });
     }
   }
+
+  
+  public get priority() : string {
+    const priority: AimPriority = this.task!.priority;
+    switch(priority) {
+      case AimPriority.High:
+        return "Wysoki";
+      case AimPriority.Medium:
+        return "Średni";
+      case AimPriority.Low:
+        return "Niski";
+      default:
+        return "Brak";
+    }
+  }
+  
 
   goBack(): void {
     this.location.back();
