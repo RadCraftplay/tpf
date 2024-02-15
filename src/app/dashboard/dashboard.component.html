@@ -1,10 +1,10 @@
 <div>
-    <app-navbar class="collapsed" (hamburgerClicked)="hamburgerToggle()" (selectedListChanged)="onSelectedListChanged($event)" [dashboardInit]="dashboardInitSubject.asObservable()"></app-navbar>
+    <app-navbar [ngClass]="menuActive ? 'visible' : 'collapsed'" (hamburgerClicked)="hamburgerToggle()" (selectedListChanged)="onSelectedListChanged($event)" [dashboardInit]="dashboardInitSubject.asObservable()"></app-navbar>
     <app-separator-vertical></app-separator-vertical>
     <ng-container *ngIf="selectedList.getType() === TAG">
-        <app-tag-list class="visible" [aimSource]="selectedList"></app-tag-list>
+        <app-tag-list [ngClass]="!menuActive ? 'visible' : 'collapsed'" [aimSource]="selectedList"></app-tag-list>
     </ng-container>
     <ng-container #elseTemplate>
-        <app-timespan-list class="visible" (hamburgerClicked)="hamburgerToggle()" [aimSource]="listAsTimespanned"></app-timespan-list>
+        <app-timespan-list [ngClass]="!menuActive ? 'visible' : 'collapsed'" (hamburgerClicked)="hamburgerToggle()" [aimSource]="listAsTimespanned"></app-timespan-list>
     </ng-container>
 </div>

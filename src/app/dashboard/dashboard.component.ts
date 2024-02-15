@@ -4,13 +4,13 @@ import { SeparatorVerticalComponent } from '../separator-vertical/separator-vert
 import { NavbarComponent } from '../navbar/navbar.component';
 import { AimList, EmptyList, ListType, TimespannedList } from '../models/aim-list';
 import { TimespanListComponent } from '../timespan-list/timespan-list.component';
-import { NgIf } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [ NavbarComponent, SeparatorVerticalComponent, TagListComponent, TimespanListComponent, NgIf ],
+  imports: [ NavbarComponent, SeparatorVerticalComponent, TagListComponent, TimespanListComponent, NgIf, NgClass ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -23,6 +23,8 @@ export class DashboardComponent implements OnInit {
   }
 
   public readonly TAG = ListType.Tag;
+
+  public menuActive : boolean = false;
 
   onSelectedListChanged(list: AimList) {
     this.selectedList = list;
@@ -39,6 +41,6 @@ export class DashboardComponent implements OnInit {
   }
 
   hamburgerToggle() {
-    console.log("click!");
+    this.menuActive = !this.menuActive;
   }
 }
