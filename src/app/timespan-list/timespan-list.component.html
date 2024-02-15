@@ -1,5 +1,5 @@
 <div id="timespan-list-container">
-    <app-hamburger-menu (click)="this.hamburgerClicked.emit()"></app-hamburger-menu>
+    <app-hamburger-menu (click)="this.checkClick($event)" sourceName="list"></app-hamburger-menu>
     <app-list-header [name]="aimSource!.getName()" [spanType]="aimSource?.timeSpan!"></app-list-header>
     <div class="aim-container">
         @for (group of groups; track groups) {

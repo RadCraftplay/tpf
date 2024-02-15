@@ -47,4 +47,10 @@ export class NavbarComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.dashboardInitSubscription.unsubscribe();
   }
+
+  checkClick(source: string) {
+    if (source == "navbar") {
+      this.hamburgerClicked.emit()
+    }
+  }
 }

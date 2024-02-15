@@ -54,4 +54,10 @@ export class TimespanListComponent implements OnInit, OnChanges {
 
     return groups;
   }
+
+  checkClick(source: string) {
+    if (source == "list") {
+      this.hamburgerClicked.emit()
+    }
+  }
 }

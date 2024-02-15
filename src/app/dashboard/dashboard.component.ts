@@ -41,6 +41,7 @@ export class DashboardComponent implements OnInit {
   }
 
   hamburgerToggle() {
+    console.log("click!");
     this.menuActive = !this.menuActive;
   }
 }
