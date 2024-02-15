@@ -47,7 +47,7 @@ export const firebaseConfig = {
 
 ![2024-02-15_00-24-51_chrome_Gac22yYQag](https://github.com/RadCraftplay/tpf/assets/6819852/cc6aa18b-716f-437d-a75e-55d44d44cc1a)
 
-![2024-02-15_02-25-16_chrome_zrBLpmCLi6](https://github.com/RadCraftplay/tpf/assets/6819852/4f4ca753-8b5d-42b1-82c9-4d5dc657228c)
+![2024-02-15_03-56-43_chrome_OKAOu3Fvsm_fix](https://github.com/RadCraftplay/tpf/assets/6819852/e761fece-bbb1-45b2-8e64-fa1ee93bf594)
 
 ![2024-02-15_02-25-19_chrome_K8DB5KhPaI](https://github.com/RadCraftplay/tpf/assets/6819852/1879159a-830d-4186-a90e-21a6fd42481e)
 
