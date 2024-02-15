@@ -16,17 +16,4 @@
 .aim-container {
     flex: 1 1 auto;
     overflow: scroll;
-
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-
-    * {
-        max-width: 50vmin;
-        min-width: 25vmin;
-    }
-}
-
-.aim-container::after {
-    flex: auto;
 }
