@@ -15,3 +15,10 @@ h1 {
 app-add-task-button {
     float: right;
 }
+
+@media (max-width: 1200px) {
+    .list-header {
+        margin-right: 16px;
+    }
+}
+
