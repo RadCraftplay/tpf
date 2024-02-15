@@ -119,8 +119,8 @@
     }
   
     .priority-options input:hover + span {
-      background-color: #4d85ff;
-      border-color: #4d85ff !important; /*important aby border był taki sam*/
+      background-color: #00CA5D;
+      border-color: #00CA5D !important; /*important aby border był taki sam*/
     }
   
   .label-text {
