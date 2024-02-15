@@ -147,6 +147,10 @@
   .year-and-number-inputs {
     display: flex;
     justify-content: column;
+
+    div {
+      width: 100%;
+    }
   }
   
   .year-and-number-inputs input[type="number"] {
@@ -220,10 +224,6 @@ button:hover {
     margin: 0;
     padding: 2vh 4vw;
     border: none;
-  }
-
-  .year-and-number-inputs > div {
-    width: 100%;
   }
 
   .input-section {
