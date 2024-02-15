@@ -16,7 +16,7 @@
       
       <div class="detail-section">
         <div class="detail-label">Opis</div>
-        <div class="detail-content">{{ task?.description }}</div>
+        <div class="detail-content">{{ task?.description?.trim() == "" ? "Brak opisu" : task?.description }}</div>
       </div>
 
       <div class="detail-section">
@@ -24,8 +24,8 @@
         <div class="detail-content">{{ task?.tags }}</div>
       </div>
       <div class="detail-section">
-        <div class="detail-label">Rok</div>
-        <div class="detail-content">{{ task?.year }}</div>
+        <div class="detail-label">Na okres</div>
+        <div class="detail-content">{{ aimTime}}</div>
       </div>
     </div>
 

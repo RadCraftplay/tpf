@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from "@angular/router";
 import { TasksService } from "../services/tasks-service/tasks-service";
 import { Location } from '@angular/common';
-import { Aim, AimPriority } from '../models/aim';
+import { Aim, AimPriority, AimSpan } from '../models/aim';
 
 @Component({
   selector: 'app-task-details',
@@ -34,7 +34,6 @@ export class TaskDetailsComponent implements OnInit {
     }
   }
 
-  
   public get priority() : string {
     const priority: AimPriority = this.task!.priority;
     switch(priority) {
@@ -48,7 +47,38 @@ export class TaskDetailsComponent implements OnInit {
         return "Brak";
     }
   }
-  
+
+  private readonly months = [
+    "Styczeń",
+    "Luty",
+    "Marzec",
+    "Kwiecień",
+    "Maj",
+    "Czerwiec",
+    "Lipiec",
+    "Sierpień",
+    "Wrzesień",
+    "Październik",
+    "Listopad",
+    "Grudzień"
+  ];
+
+  public get aimTime() : string {
+    const type: AimSpan = this.task!.spanType;
+    const spanValue: AimSpan = this.task!.spanValue;
+    const year: AimSpan = this.task!.year;
+
+    switch (type) {
+      case AimSpan.Week:
+        return `Tydzień ${spanValue}-${year}`
+      case AimSpan.Month:
+        return `${this.months[spanValue - 1]} ${year}`
+      case AimSpan.Year:
+        return `Rok ${year}`
+      default:
+        throw new Error("Method not implemented.");
+    }
+  }
 
   goBack(): void {
     this.location.back();
