@@ -34,6 +34,7 @@
     "@types/firebase": "^3.2.1",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^20.11.16",
+    "cypress": "^13.6.4",
     "firebase": "^10.6.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
