@@ -15,3 +15,21 @@ div {
 app-separator-vertical {
     height: 100%;
 }
+
+@media (max-width: 1200px) {
+    app-separator-vertical {
+        visibility: hidden;
+    }
+
+    app-navbar {
+        width: 100%;
+    }
+
+    .collapsed {
+        visibility: collapse;
+    }
+    
+    .visible {
+        position: absolute;
+    }
+}
