@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ListHeaderComponent } from '../list-header/list-header.component';
 import { AimGroupComponent } from '../aim-group/aim-group.component';
 import { TimespannedList } from '../models/aim-list';
@@ -17,6 +17,8 @@ import { HamburgerMenuComponent } from '../hamburger-menu/hamburger-menu.compone
 export class TimespanListComponent implements OnInit, OnChanges {
   @Input() aimSource : TimespannedList | undefined;
   groups : GroupedAims[] | undefined;
+
+  @Output() hamburgerClicked = new EventEmitter<void>;
 
   constructor() {}
 

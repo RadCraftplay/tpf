@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-hamburger-menu',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './hamburger-menu.component.css'
 })
 export class HamburgerMenuComponent {
-
+  @Output() click = new EventEmitter<void>;
 }

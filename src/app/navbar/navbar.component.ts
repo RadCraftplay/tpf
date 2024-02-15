@@ -27,6 +27,7 @@ export class NavbarComponent implements OnInit, OnDestroy {
   @Input() dashboardInit: Observable<void>;
 
   @Output() selectedListChanged = new EventEmitter<AimList>;
+  @Output() hamburgerClicked = new EventEmitter<void>;
 
   constructor(tasksService: TasksService) {
     this.monthList = new TimespannedList(AimSpan.Month, tasksService)

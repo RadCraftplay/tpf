@@ -37,4 +37,8 @@ export class DashboardComponent implements OnInit {
       this.dashboardInitSubject.next();
     }, 50);
   }
+
+  hamburgerToggle() {
+    console.log("click!");
+  }
 }
