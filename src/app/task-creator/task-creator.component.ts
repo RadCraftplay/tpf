@@ -33,7 +33,7 @@ export class TaskCreatorComponent {
 
     const tagArray = tags.split(',').map(tag => tag.trim());
     const year = this.selectedDate.getFullYear();
-    const spanValue = this.getWeekOfMonth(this.selectedDate);
+    const spanValue = this.selectedDate.getMonth();
     const task = {
       description: description,
       done: false,
@@ -53,11 +53,5 @@ export class TaskCreatorComponent {
   priority: string = '';
   setPriority(priority: string): void {
     this.priority = priority;
-  }
-  private getWeekOfMonth(date: Date): number {
-    const firstDayOfMonth = new Date(date.getFullYear(), date.getMonth(), 1);
-    const dayOfWeek = firstDayOfMonth.getDay() - 1; // Zwraca 0 dla poniedziałku
-    const remainingDays = date.getDate() - 1;
-    return Math.ceil((dayOfWeek + remainingDays) / 7);
   }
 }
