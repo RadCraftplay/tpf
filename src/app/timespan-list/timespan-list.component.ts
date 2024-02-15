@@ -5,11 +5,12 @@ import { TimespannedList } from '../models/aim-list';
 import { GroupedAims } from '../models/ui';
 import { Aim, AimSpan } from '../models/aim';
 import { groupBy } from '../common';
+import { HamburgerMenuComponent } from '../hamburger-menu/hamburger-menu.component';
 
 @Component({
   selector: 'app-timespan-list',
   standalone: true,
-  imports: [ ListHeaderComponent, AimGroupComponent ],
+  imports: [ ListHeaderComponent, AimGroupComponent, HamburgerMenuComponent ],
   templateUrl: './timespan-list.component.html',
   styleUrl: './timespan-list.component.css'
 })

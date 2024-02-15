@@ -1,0 +1,14 @@
+button {
+    width: 48px;
+    height: 48px;
+}
+
+button:hover {
+    background-color: #00000000;
+}
+
+@media (min-width: 1200px) {
+    button {
+        visibility: hidden;
+    }
+}

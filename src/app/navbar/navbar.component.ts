@@ -7,11 +7,12 @@ import { AimList, EmptyList, TimespannedList } from '../models/aim-list';
 import { AimSpan } from '../models/aim';
 import { TasksService } from '../services/tasks-service/tasks-service';
 import { Observable, Subscription, of } from 'rxjs';
+import { HamburgerMenuComponent } from '../hamburger-menu/hamburger-menu.component';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [ NavbarListSelectorComponent, NavbarHeaderComponent, SeparatorComponent ],
+  imports: [ NavbarListSelectorComponent, NavbarHeaderComponent, SeparatorComponent, HamburgerMenuComponent ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })

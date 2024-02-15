@@ -31,5 +31,6 @@ app-separator-vertical {
     
     .visible {
         position: absolute;
+        width: 100%;
     }
 }

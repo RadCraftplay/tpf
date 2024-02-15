@@ -1,4 +1,5 @@
 <div id="navbar">
+    <app-hamburger-menu></app-hamburger-menu>
     <app-navbar-header name="Listy"></app-navbar-header>
     <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/month.svg" [list]="monthList"></app-navbar-list-selector>
     <app-navbar-list-selector [selectedName]="selectedListName" (listSelected)="onListSelected($event)" icon="../../assets/img/year.svg" [list]="yearList"></app-navbar-list-selector>
